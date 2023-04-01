@@ -40,10 +40,4 @@ I will be adding more of functionality and styling in the future. You can fork o
 <img style="margin: auto;" src="https://opencollective-production.s3.us-west-1.amazonaws.com/ff0a6e30-eab3-11e9-a22e-83df461207f7.png" alt=netlify width="60" height="60"/>
 </p>
 
-<h2> Demo screenshots <h2>
-![demo](https://github.com/Ajay-PratapSingh/Quiz-Application/blob/main/src/DemoImg/Screenshot%20(161).png?raw=true "Title")
-![demo](https://github.com/Ajay-PratapSingh/Quiz-Application/blob/main/src/DemoImg/Screenshot%20(162).png?raw=true "Title")
-![demo](https://github.com/Ajay-PratapSingh/Quiz-Application/blob/main/src/DemoImg/Screenshot%20(163).png?raw=true "Title")
-![demo](https://github.com/Ajay-PratapSingh/Quiz-Application/blob/main/src/DemoImg/Screenshot%20(164).png?raw=true "Title")
-![demo](https://github.com/Ajay-PratapSingh/Quiz-Application/blob/main/src/DemoImg/Screenshot%20(165).png?raw=true "Title")
 
