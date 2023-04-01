@@ -41,9 +41,9 @@ I will be adding more of functionality and styling in the future. You can fork o
 </p>
 
 <h2> Demo screenshots <h2>
-![demo](https://github.com/Ajay-PratapSingh/Quiz-Application/blob/main/DemoImg/Screenshot%20(161).png?raw=true "Title")
-![demo](https://github.com/Ajay-PratapSingh/Quiz-Application/blob/main/DemoImg/Screenshot%20(162).png?raw=true "Title")
-![demo](https://github.com/Ajay-PratapSingh/Quiz-Application/blob/main/DemoImg/Screenshot%20(163).png?raw=true "Title")
-![demo](https://github.com/Ajay-PratapSingh/Quiz-Application/blob/main/DemoImg/Screenshot%20(164).png?raw=true "Title")
-![demo](https://github.com/Ajay-PratapSingh/Quiz-Application/blob/main/DemoImg/Screenshot%20(165).png?raw=true "Title")
+![demo](https://github.com/Ajay-PratapSingh/Quiz-Application/blob/main/src/DemoImg/Screenshot%20(161).png?raw=true "Title")
+![demo](https://github.com/Ajay-PratapSingh/Quiz-Application/blob/main/src/DemoImg/Screenshot%20(162).png?raw=true "Title")
+![demo](https://github.com/Ajay-PratapSingh/Quiz-Application/blob/main/src/DemoImg/Screenshot%20(163).png?raw=true "Title")
+![demo](https://github.com/Ajay-PratapSingh/Quiz-Application/blob/main/src/DemoImg/Screenshot%20(164).png?raw=true "Title")
+![demo](https://github.com/Ajay-PratapSingh/Quiz-Application/blob/main/src/DemoImg/Screenshot%20(165).png?raw=true "Title")
 
