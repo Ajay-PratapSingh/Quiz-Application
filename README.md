@@ -1,9 +1,7 @@
 <h1 align="center">React Quiz app with firebase firestore DB</h1>
  
  <p align="center"><br/>
- <p>DEMO</p>
-     <a href="https://in-quiz-itive.netlify.app/">
-  </a>
+ <a href="https://in-quiz-itive.netlify.app/"> DEMO </a>
  </p>
 
 
@@ -43,9 +41,9 @@ I will be adding more of functionality and styling in the future. You can fork o
 </p>
 
 <h2> Demo screenshots <h2>
-! [alt text] (https://github.com/Ajay-PratapSingh/Quiz-Application/blob/master/src/DemoImg/Screenshot(161).png)
-! [alt text] (https://github.com/Ajay-PratapSingh/Quiz-Application/blob/master/src/DemoImg/Screenshot(162).png)
-! [alt text] (https://github.com/Ajay-PratapSingh/Quiz-Application/blob/master/src/DemoImg/Screenshot(163).png)
-! [alt text] (https://github.com/Ajay-PratapSingh/Quiz-Application/blob/master/src/DemoImg/Screenshot(164).png)
-! [alt text] (https://github.com/Ajay-PratapSingh/Quiz-Application/blob/master/src/DemoImg/Screenshot(165).png)
+![demo](https://github.com/Ajay-PratapSingh/Quiz-Application/blob/master/DemoImg/Screenshot%20(161).png?raw=true "Title")
+![demo](https://github.com/Ajay-PratapSingh/Quiz-Application/blob/master/DemoImg/Screenshot%20(162).png?raw=true "Title")
+![demo](https://github.com/Ajay-PratapSingh/Quiz-Application/blob/master/DemoImg/Screenshot%20(163).png?raw=true "Title")
+![demo](https://github.com/Ajay-PratapSingh/Quiz-Application/blob/master/DemoImg/Screenshot%20(164).png?raw=true "Title")
+![demo](https://github.com/Ajay-PratapSingh/Quiz-Application/blob/master/DemoImg/Screenshot%20(165).png?raw=true "Title")
 
