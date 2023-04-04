@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { Link, useLoaderData, useParams } from 'react-router-dom';
 import "./Card.css";
-export default function TestWindow(props) {
+export default function TestWindow() {
 
 	const params=useParams();
 	const testid=params.testid;
 
 	const questions=useLoaderData();
+	console.log(questions);
 
     const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [showScore, setShowScore] = useState(false);
@@ -37,7 +38,6 @@ export default function TestWindow(props) {
 
 	return (
 		<div>
-		<h2>{props.quizname}</h2>
 		<div className="card">
 			{showScore ? (
 				<div className='score-section'>
