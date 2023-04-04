@@ -8,7 +8,6 @@ export default function EditQuesForm(props) {
 
     const docId = props.quesdetails.id;
     const testid = props.testid;
-    console.log(props.quesdetails.prompt)
 
     const docRef = doc(db, "tests", testid, "Questions", docId);
 

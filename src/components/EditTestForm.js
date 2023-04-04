@@ -10,9 +10,8 @@ export default function EditTestForm(props) {
   const testid = params.testid;
   const subCollectionRef = collection(db, "tests", `${testid}`, "Questions");
 
-  const loadedquesarr= useLoaderData();
+  const quesarr= useLoaderData();
 
-  const [quesarr,setQuesarr] = useState(loadedquesarr);
 
   const [showConfirmation, setShowConfirmation] = useState(false);
 
@@ -41,12 +40,12 @@ export default function EditTestForm(props) {
   }
 
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => { 
     event.preventDefault();
     const { prompt, opt1, opt2, opt3, opt4, ans } = formValues;
     const options = [opt1, opt2, opt3, opt4];
 
-    const data = {
+    var data = {
       prompt, options, ans
     };
 
@@ -57,7 +56,10 @@ export default function EditTestForm(props) {
     }
 
     console.log(data);
-    addDoc(subCollectionRef, data);
+    const docRef =await addDoc(subCollectionRef, data);
+    const id=docRef.id;
+    
+    data={...data,id};
 
     setFormValues({
       prompt: '',
@@ -70,7 +72,6 @@ export default function EditTestForm(props) {
 
     setShowConfirmation(true);
     setTimeout(() => setShowConfirmation(false), 2000);
-    setQuesarr([...quesarr,{data}]);
   };
 
   return (
@@ -112,7 +113,7 @@ export default function EditTestForm(props) {
         </label>
         <button type="submit" className='btn' onClick={handleSubmit}>Add</button>
       </form>
-      {quesarr.map((ques,index) => (<div><p>Question {index+ 1} </p><EditQuesForm quesdetails={ques} testid={testid} /></div>))}
+      {quesarr.map((ques,index) => (<div><p>Question {index+ 1} </p><EditQuesForm quesdetails={ques} testid={testid}/></div>))}
       <Link to={"/tests"} className='btn'>Finish</Link>
     </div>
   );

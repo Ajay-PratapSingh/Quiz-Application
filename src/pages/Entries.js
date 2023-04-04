@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
-import Notes from "../components/Notes";
+import { Fragment, useEffect, useState } from "react";
 import { getDocs, collection, deleteDoc, doc} from "firebase/firestore";
 import { db } from "../config/firebase";
+import Card from "../components/Card";
+import "../components/Card.css";
 
 const Entries = () => {
 
@@ -29,7 +30,17 @@ const Entries = () => {
 
 
     return (
-        <Notes notes={Notesarr} onDelete={DeleteNote}/>
+        <Fragment>
+            <h1>All tests</h1>
+            <div className="alltest-wrapper">
+            {Notesarr.length>0 && Notesarr.map((ele)=>(<Card default={ele.default}
+            Id={ele.id}
+            onDeleteItem={DeleteNote}
+            CardTitle={ele.quizname}
+            CardDescription={ele.description}
+            timelimit={ele.timelimit}/>))}
+            </div>
+        </Fragment>
     )
 }
 export default Entries;
