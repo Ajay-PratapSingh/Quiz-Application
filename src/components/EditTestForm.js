@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./Card.css"
 import { collection, addDoc } from "firebase/firestore";
 import { db } from '../config/firebase';
@@ -10,7 +10,9 @@ export default function EditTestForm(props) {
   const testid = params.testid;
   const subCollectionRef = collection(db, "tests", `${testid}`, "Questions");
 
-  const quesarr = useLoaderData();
+  const loadedquesarr= useLoaderData();
+
+  const [quesarr,setQuesarr] = useState(loadedquesarr);
 
   const [showConfirmation, setShowConfirmation] = useState(false);
 
@@ -68,6 +70,7 @@ export default function EditTestForm(props) {
 
     setShowConfirmation(true);
     setTimeout(() => setShowConfirmation(false), 2000);
+    setQuesarr([...quesarr,{data}]);
   };
 
   return (

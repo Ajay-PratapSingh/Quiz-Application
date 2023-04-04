@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { doc, updateDoc } from "firebase/firestore";
+import { deleteDoc, doc, updateDoc } from "firebase/firestore";
 import { db } from '../config/firebase';
 
 
@@ -9,6 +9,8 @@ export default function EditQuesForm(props) {
     const docId = props.quesdetails.id;
     const testid = props.testid;
     console.log(props.quesdetails.prompt)
+
+    const docRef = doc(db, "tests", testid, "Questions", docId);
 
     const [showConfirmation, setShowConfirmation] = useState(false);
 
@@ -39,13 +41,21 @@ export default function EditQuesForm(props) {
         });
     }
 
+    const handleDelete = async (event)=>{
+        event.preventDefault();
+        await deleteDoc(docRef);
+        setShowConfirmation(true);
+        setTimeout(() => setShowConfirmation(false), 2000);
+
+    } 
+
     const handleSubmit = async (event) => {
         event.preventDefault();
         const { prompt, opt1, opt2, opt3, opt4, ans } = inputValues;
         const options = [opt1, opt2, opt3, opt4];
 
         const data = {
-            prompt, options, ans
+            prompt,options,ans
         };
 
         console.log(data)
@@ -55,8 +65,7 @@ export default function EditQuesForm(props) {
         }
 
         console.log(data);
-        const docRef = doc(db, "tests", testid, "Questions", docId);
-        await updateDoc(docRef, inputValues);
+        await updateDoc(docRef,data);
 
         setShowConfirmation(true);
         setTimeout(() => setShowConfirmation(false), 2000);
@@ -100,6 +109,7 @@ export default function EditQuesForm(props) {
                 </label>
 
                 <button className='btn' onClick={handleSubmit}>Update</button>
+                <button className='btn' onClick={handleDelete}>Delete</button>
             </form>
         </div>
     );

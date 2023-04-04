@@ -1,8 +1,12 @@
 <h1 align="center">React Quiz app with firebase firestore DB</h1>
  
  <p align="center"><br/>
+<<<<<<< HEAD
  <p>DEMO</p>
      <a href="https://in-quiz-itive.netlify.app/"></a>
+=======
+ <a href="https://in-quiz-itive.netlify.app/"> DEMO </a>
+>>>>>>> 5a4db49bc13e439b8bec0614369fa87976f7df32
  </p>
 
 
@@ -41,10 +45,13 @@ I will be adding more of functionality and styling in the future. You can fork o
 <img style="margin: auto;" src="https://opencollective-production.s3.us-west-1.amazonaws.com/ff0a6e30-eab3-11e9-a22e-83df461207f7.png" alt=netlify width="60" height="60"/>
 </p>
 
+<<<<<<< HEAD
 <h2> Demo screenshots <h2>
 ! [alt text] (https://github.com/Ajay-PratapSingh/Quiz-Application/blob/master/src/DemoImg/Screenshot(161).png)
 ! [alt text] (https://github.com/Ajay-PratapSingh/Quiz-Application/blob/master/src/DemoImg/Screenshot(162).png)
 ! [alt text] (https://github.com/Ajay-PratapSingh/Quiz-Application/blob/master/src/DemoImg/Screenshot(163).png)
 ! [alt text] (https://github.com/Ajay-PratapSingh/Quiz-Application/blob/master/src/DemoImg/Screenshot(164).png)
 ! [alt text] (https://github.com/Ajay-PratapSingh/Quiz-Application/blob/master/src/DemoImg/Screenshot(165).png)
+=======
+>>>>>>> 5a4db49bc13e439b8bec0614369fa87976f7df32
 
