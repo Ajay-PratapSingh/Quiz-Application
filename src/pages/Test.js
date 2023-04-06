@@ -1,8 +1,7 @@
-import { collection, doc, getDoc, getDocs, or } from 'firebase/firestore';
+import { collection, doc, getDoc, getDocs} from 'firebase/firestore';
 import { db } from '../config/firebase';
 import TestWindow from "../components/TestWindow";
 import { useParams } from 'react-router-dom';
-import Timer from '../components/Timer';
 import { useEffect, useState } from 'react';
 
 const Test = () => {
@@ -11,13 +10,14 @@ const Test = () => {
 
     const [documentData, setDocumentData] = useState(null);
     const [loading, setLoading] = useState(true);
-   
+
 
     useEffect(() => {
         async function fetchDocument() {
-            const docRef = doc(db,"tests",testid);
+            const docRef = doc(db, "tests", testid);
             const docSnap = await getDoc(docRef);
-            setDocumentData(docSnap.data());
+            const QuizDetails = docSnap.data()
+            setDocumentData(QuizDetails);
             setLoading(false);
         }
         fetchDocument();
@@ -27,7 +27,11 @@ const Test = () => {
 
     return (
         <div>
-            {loading ? <p>Loading...</p> :<div> <Timer time={documentData.timelimit}/> <TestWindow quizname={documentData.quizname}/></div>}     
+            {loading ? <p>Loading...</p> :
+
+                <div>
+                    <div><h1>{documentData.quizname}</h1></div>
+                    <TestWindow quizname={documentData.quizname} time={documentData.timelimit}/></div>}
         </div>
     )
 }

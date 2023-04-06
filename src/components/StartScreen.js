@@ -15,8 +15,7 @@ const StartScreen = (props) => {
             <div>
                 <img src={startscreen_image} alt=" a person stepping on books as a ladder to success" className="illustration-ss"></img>
             </div>
-        </div>
-
+        </div >
     )
 }
 export default StartScreen;

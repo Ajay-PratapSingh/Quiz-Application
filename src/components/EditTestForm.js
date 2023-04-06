@@ -1,33 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import "./Card.css"
-import { collection, addDoc } from "firebase/firestore";
-import { db } from '../config/firebase';
-import { Link, useLoaderData, useParams } from 'react-router-dom';
-import EditQuesForm from './EditQuesForm';
+
+
 
 export default function EditTestForm(props) {
-  const params = useParams();
-  const testid = params.testid;
-  const subCollectionRef = collection(db, "tests", `${testid}`, "Questions");
-
-  const quesarr= useLoaderData();
-
-
+  
   const [showConfirmation, setShowConfirmation] = useState(false);
 
-  const [formValues, setFormValues] = useState({
-    prompt: '',
-    options: [],
-    ans: '',
-  });
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormValues((prevValues) => ({
-      ...prevValues,
-      [name]: value,
-    }));
-  };
+  const promptref = useRef("");
+  const opt1ref = useRef("");
+  const opt2ref = useRef("");
+  const opt3ref = useRef("");
+  const opt4ref = useRef("");
+  const ansref = useRef("");
 
   function isEmpty(str) {
     return !str || str.trim().length === 0;
@@ -40,38 +25,31 @@ export default function EditTestForm(props) {
   }
 
 
-  const handleSubmit = async (event) => { 
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const { prompt, opt1, opt2, opt3, opt4, ans } = formValues;
-    const options = [opt1, opt2, opt3, opt4];
-
-    var data = {
+    const prompt = promptref.current.value;
+    const options = [opt1ref.current.value, opt2ref.current.value, opt3ref.current.value, opt4ref.current.value];
+    const ans = ansref.current.value;
+    const data = {
       prompt, options, ans
     };
 
-    console.log(data)
     if (isEmpty(data.prompt) || checkEmptyString(data.options) || isEmpty(data.ans)) {
       alert("At least one input is empty!");
       return;
     }
 
-    console.log(data);
-    const docRef =await addDoc(subCollectionRef, data);
-    const id=docRef.id;
-    
-    data={...data,id};
-
-    setFormValues({
-      prompt: '',
-      opt1: '',
-      opt2: '',
-      opt3: '',
-      opt4: '',
-      ans: '',
-    });
+    await props.onNewSave(data);
 
     setShowConfirmation(true);
     setTimeout(() => setShowConfirmation(false), 2000);
+
+    promptref.current.value = '';
+    opt1ref.current.value = '';
+    opt2ref.current.value = '';
+    opt3ref.current.value = '';
+    opt4ref.current.value = '';
+    ansref.current.value = '';
   };
 
   return (
@@ -89,32 +67,30 @@ export default function EditTestForm(props) {
       <form onSubmit={handleSubmit} className='quiz-edit-card'>
         <label>
           Question:
-          <input type="text" name="prompt" value={formValues.prompt} onChange={handleChange} className='editinputfield' />
+          <input type="text" name="prompt" ref={promptref} className='editinputfield' />
         </label>
         <label>
           Option 1:
-          <input type="text" name="opt1" value={formValues.opt1} onChange={handleChange} />
+          <input type="text" name="opt1"  ref={opt1ref} />
         </label>
         <label>
           Option 2:
-          <input type="text" name="opt2" value={formValues.opt2} onChange={handleChange} />
+          <input type="text" name="opt2"  ref={opt2ref} />
         </label>
         <label>
           Option 3:
-          <input type="text" name="opt3" value={formValues.opt3} onChange={handleChange} />
+          <input type="text" name="opt3"  ref={opt3ref} />
         </label>
         <label>
           Option 4:
-          <input type="text" name="opt4" value={formValues.opt4} onChange={handleChange} />
+          <input type="text" name="opt4"  ref={opt4ref} />
         </label>
         <label>
           Answer:
-          <input type="text" name="ans" value={formValues.ans} onChange={handleChange} />
+          <input type="text" name="ans" ref={ansref} />
         </label>
         <button type="submit" className='btn' onClick={handleSubmit}>Add</button>
       </form>
-      {quesarr.map((ques,index) => (<div><p>Question {index+ 1} </p><EditQuesForm quesdetails={ques} testid={testid}/></div>))}
-      <Link to={"/tests"} className='btn'>Finish</Link>
     </div>
   );
 }

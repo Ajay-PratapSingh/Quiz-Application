@@ -40,7 +40,6 @@ const CreateForm = (props) => {
                 quizname, description, type, timelimit
             };
 
-            console.log(testdata);
             const docRef = await addDoc(collection(db, "tests"), testdata);
             const testid = docRef.id;
             setFormValues({
@@ -49,7 +48,7 @@ const CreateForm = (props) => {
                 type: "",
                 timelimit: 0
             });
-            navigate(`/create/${testid}`);
+            navigate(`/${testid}/edit`);
     };
 
     return (

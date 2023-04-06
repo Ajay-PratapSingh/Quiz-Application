@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import logo from "../images/book-education-learning-school-science-study-2-svgrepo-com.svg";
-import'./MainNavigation.css';
+import './MainNavigation.css';
 
 
 function MainNavigation() {
