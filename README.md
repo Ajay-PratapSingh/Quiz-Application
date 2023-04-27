@@ -40,5 +40,37 @@ I will be adding more of functionality and styling in the future. You can fork o
 <img style="margin: auto;" src="https://opencollective-production.s3.us-west-1.amazonaws.com/ff0a6e30-eab3-11e9-a22e-83df461207f7.png" alt=netlify width="60" height="60"/>
 </p>
 
+<h2>How to Clone and run this project?</h2>
+[Node.js](http://nodejs.org/download/) is required to run this application on your local machine. 
+
+Install and run the app using the following steps: 
+
+Clone the repository
+```
+git clone https://github.com/Ajay-PratapSingh/Quiz-Application.git
+```
+
+Navigate to the repository
+```
+cd Quiz-Application
+```
+
+Install the dependencies
+```
+npm install
+```
+
+Run the application in development mode
+```
+npm start
+```
+
+App will be served on and can be viewed at [https://localhost:3000](https://localhost:3000)
+
+<h3>Add Firebase to your project and set-up firestore DB </h3>
+<a href="https://firebase.google.com/docs/web/setup">setup tutorial</a>
+
+
+
 
 
