@@ -1,10 +1,12 @@
 import React, { useRef, useState } from 'react';
 import "./Card.css"
-
+import { collection, addDoc } from "firebase/firestore";
+import { db } from '../config/firebase';
 
 
 export default function EditTestForm(props) {
-  
+  const subCollectionRef = collection(db, "tests", `${props.testid}`, "Questions");
+
   const [showConfirmation, setShowConfirmation] = useState(false);
 
   const promptref = useRef("");
@@ -39,7 +41,7 @@ export default function EditTestForm(props) {
       return;
     }
 
-    await props.onNewSave(data);
+    const docref=await addDoc(subCollectionRef, data);
 
     setShowConfirmation(true);
     setTimeout(() => setShowConfirmation(false), 2000);

@@ -24,7 +24,7 @@
     min-height: 100vh;
     padding: 30px;
     background:
-      url(https://img.freepik.com/free-vector/white-question-mark-background-minimal-style_1017-25235.jpg?w=740&t=st=1680345395~exp=1680345995~hmac=9bc9802084f934288ccd857899b48d83e694876212ac9b8b7cec51f7d81a745c)
+      url(../images/25235.jpg)
       center / cover no-repeat fixed;
   }
   
@@ -75,7 +75,7 @@
 
   .warning{
     font-size: smaller;
-    color: rgb(255, 187, 187);
+    color: rgb(255, 143, 143);
   }
 
   .button-wrapper{

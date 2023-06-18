@@ -42,9 +42,10 @@ export default function EditQuesForm(props) {
 
     const handleDelete = async (event)=>{
         event.preventDefault();
-        await props.onDelete(docId);
+        await deleteDoc(docRef);
         setShowConfirmation(true);
         setTimeout(() => setShowConfirmation(false), 2000);
+        props.ondelete(docId);
     } 
 
     const handleSubmit = async (event) => {
@@ -61,7 +62,9 @@ export default function EditQuesForm(props) {
             alert("At least one input is empty!");
             return;
         }
-        await props.onUpdate(docId,data);
+
+        console.log(data);
+        await updateDoc(docRef,data);
 
         setShowConfirmation(true);
         setTimeout(() => setShowConfirmation(false), 2000);

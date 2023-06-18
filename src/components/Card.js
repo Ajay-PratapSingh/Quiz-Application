@@ -12,7 +12,7 @@ const Card = (props) => {
                 <strong>Description</strong>
                 <p>{props.CardDescription}</p>
                 <p>Time limit: {props.timelimit} min</p>
-                {props.default?<p className="warning">this is a default quiz and CAN'T be deleted for functionality demonstration,try ading a new quiz</p>:<p className="warning">this quiz is NOT a default quiz and CAN be deleted</p>}
+                {props.default?<p className="warning">this is a default quiz and CAN'T be deleted for functionality demonstration,try adding a new quiz</p>:<p className="warning">this quiz is NOT a default quiz and CAN be deleted</p>}
                 <div button-wrapper>
                 <Link to={`/${testid}/attempt`} className="btn">Attempt Quiz</Link>
                 <Link to={`/${testid}/edit`} className="btn">Edit Quiz</Link>

@@ -40,6 +40,7 @@ const CreateForm = (props) => {
                 quizname, description, type, timelimit
             };
 
+            console.log(testdata);
             const docRef = await addDoc(collection(db, "tests"), testdata);
             const testid = docRef.id;
             setFormValues({

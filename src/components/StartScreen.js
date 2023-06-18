@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Card.css"
 import startscreen_image from "../images/undraw_road_to_knowledge_m8s0.svg";
+
 const StartScreen = (props) => {
     return (
         <div className="alltest-wrapper">
@@ -15,7 +16,8 @@ const StartScreen = (props) => {
             <div>
                 <img src={startscreen_image} alt=" a person stepping on books as a ladder to success" className="illustration-ss"></img>
             </div>
-        </div >
+        </div>
+
     )
 }
 export default StartScreen;

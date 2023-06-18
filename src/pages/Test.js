@@ -10,14 +10,13 @@ const Test = () => {
 
     const [documentData, setDocumentData] = useState(null);
     const [loading, setLoading] = useState(true);
-
+   
 
     useEffect(() => {
         async function fetchDocument() {
-            const docRef = doc(db, "tests", testid);
+            const docRef = doc(db,"tests",testid);
             const docSnap = await getDoc(docRef);
-            const QuizDetails = docSnap.data()
-            setDocumentData(QuizDetails);
+            setDocumentData(docSnap.data());
             setLoading(false);
         }
         fetchDocument();
@@ -27,11 +26,7 @@ const Test = () => {
 
     return (
         <div>
-            {loading ? <p>Loading...</p> :
-
-                <div>
-                    <div><h1>{documentData.quizname}</h1></div>
-                    <TestWindow quizname={documentData.quizname} time={documentData.timelimit}/></div>}
+            {loading ? <p>Loading...</p> :<div> <TestWindow quizname={documentData.quizname} time={documentData.timelimit}/></div>}     
         </div>
     )
 }

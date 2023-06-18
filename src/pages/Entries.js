@@ -6,6 +6,8 @@ import "../components/Card.css";
 
 const Entries = () => {
 
+    
+
     useEffect(() => {
             getNotesList();
     }, []);
