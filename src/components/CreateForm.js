@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./Card.css"
+import "./CreateForm.css"
 import { useNavigate } from "react-router-dom";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../config/firebase";
@@ -53,7 +53,7 @@ const CreateForm = (props) => {
     };
 
     return (
-        <div className="alltest-wrapper" >
+        <div className="createform-wrapper" >
             <div className="create-quiz-card">
                 <div>
                     <strong>Create quiz</strong>

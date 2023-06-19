@@ -147,3 +147,33 @@ p {
 h3 {
     color: #17153b;
 }
+
+@media only screen and (max-width: 480px) {
+    .profile-container {
+        flex-direction: column-reverse;
+        width:100%;
+        align-items: center;
+    }
+    .details-wrapper{
+        height: fit-content;
+        width:70%;
+        margin:0;
+    }
+    .mid-container{
+        width:100%;
+    }
+
+    .bannertext{
+        font-size:medium;
+        overflow-y:clip;
+    }
+
+    .activity {
+        height: 90%;
+        width: 100%;
+        overflow-x: scroll;
+    }
+    .badgeimg{
+        display:none;
+    }
+}

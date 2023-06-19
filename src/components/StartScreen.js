@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import "./Card.css"
+import "./StartScreen.css"
 import startscreen_image from "../images/undraw_road_to_knowledge_m8s0.svg";
 
 const StartScreen = (props) => {
     return (
-        <div className="alltest-wrapper">
+        <div className="main">
             <div className="card">
                 <strong>Quiz App</strong>
                 <p>Create and take quizes</p>

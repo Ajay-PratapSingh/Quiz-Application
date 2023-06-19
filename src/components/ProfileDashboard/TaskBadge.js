@@ -4,7 +4,7 @@ import medalimage from "../../images/icons8-medal-64.png";
 export default function TaskBadge(props) {
   return (
     <div className='taskbadge'>
-        <img src={medalimage}></img>
+        <img src={medalimage} className='badgeimg'></img>
         <h4>{props.taskname}</h4>
     </div>
   )

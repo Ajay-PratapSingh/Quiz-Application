@@ -17,16 +17,6 @@
     margin-bottom: 1.5em;
   }
   
-  body {
-    font: 1em/1.618 Inter, sans-serif;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 30px;
-    background:
-      url(../images/25235.jpg)
-      center / cover no-repeat fixed;
-  }
   
   .card {
     max-width:80%;
@@ -48,25 +38,6 @@
     margin:30px;
   }
 
-  .create-quiz-card{
-    max-width:80%;
-    height:65vh;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  
-    max-width: 500px;
-    padding: 35px;
-  
-    border: 1px solid rgba(255, 255, 255, .25);
-    border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.45);
-    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
-  
-    backdrop-filter: blur(5px);
-    margin:30px;
-  }
   
   .card-footer {
     font-size: 0.65em;
@@ -78,11 +49,6 @@
     color: rgb(255, 143, 143);
   }
 
-  .button-wrapper{
-    margin-top: 18px;
-    display:flex;
-    flex-direction: column;
-  }
   
 
 .btn{
@@ -155,29 +121,6 @@
   width: 50%;
 }
 
-.alltest-wrapper{
-  width:100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-left: 50px;
-}
-
-.illustration{
-  max-width: 90%;
-  height: auto;
-  margin-top:30px;
-  margin-left:20px;
-}
-
-.illustration-ss{
-  max-width: 80%;
-  height: auto;
-  margin-top:30px;
-  margin-left:40px;
-  margin-right:20px;
-  float:right;
-}
 
 .answer-section{
   display: flex;
@@ -214,4 +157,17 @@
   vertical-align: middle;
   margin: 5px;
 
+}
+
+.alltest-wrapper{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 480px) {
+  .alltest-wrapper{
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
 }

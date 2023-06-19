@@ -26,12 +26,12 @@ function MainNavigation() {
                             Create Test
                         </NavLink>
                     </li>
+                    <li>
+                        <Link to={"profile"} className="Authbtn">
+                            profile
+                        </Link>
+                    </li>
                 </ul>
-                <div>
-                <Link to={"profile"} className="Authbtn">
-                    profile
-                </Link>
-                </div>
             </nav>
         </header>
     );
